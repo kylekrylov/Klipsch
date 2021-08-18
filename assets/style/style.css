@@ -428,8 +428,7 @@ textarea {
   top: 0;
   left: 50%;
   height: 100%;
-  width: 100%;
-  max-width: calc(1280px / 2);
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -449,8 +448,9 @@ textarea {
   background: #ae663a;
   border: none;
   font-size: 28px;
-  line-height: 30px;
+  line-height: 30px/28px;
   position: relative;
+  padding: 16px 73px 16px 53px;
 }
 
 .banner__btn::before,
@@ -514,7 +514,7 @@ textarea {
 
 .product__title {
   font-size: 48px;
-  line-height: 58px;
+  line-height: 120.83333%;
   color: #ffffff;
   margin-bottom: 60px;
   text-transform: uppercase;
@@ -572,7 +572,7 @@ textarea {
 
 .product__card-title {
   font-size: 24px;
-  line-height: 29px;
+  line-height: 120.83333%;
 }
 
 .product__text {
@@ -815,9 +815,32 @@ textarea {
   margin-bottom: 0;
 }
 
-@media (max-width: 1139.98px) {
-  .text--triger {
-    font-size: 12px;
+@media (max-width: 1279.98px) {
+  .wrapper {
+    max-width: calc(1280px - 2 * 16px);
+    padding: 0 16px;
+  }
+
+  .product__card {
+    width: calc(50% - 40px / 2);
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .product__btns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .product__btn {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .product__btn--bl {
+    margin: 0;
   }
 
   .footer__wrapper {
@@ -869,9 +892,61 @@ textarea {
   }
 }
 
+@media (max-width: 1139.98px) {
+  .text--triger {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .wrapper {
     padding: 0 10px;
+  }
+
+  .banner__content {
+    left: 0;
+    width: 100%;
+  }
+
+  .banner__logo {
+    padding: 10px;
+  }
+
+  .banner__logo svg {
+    width: 160px;
+  }
+
+  .banner__btn {
+    font-size: 22px;
+    padding: 12px 73px 12px 53px;
+  }
+
+  .product {
+    margin-top: 30px;
+  }
+
+  .product:nth-of-type(1) {
+    margin-top: 80px;
+  }
+
+  .product__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .product__card {
+    width: 100%;
+    margin-right: 0px;
+    padding: 20px 20px 16px;
+  }
+
+  .product__card-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .product-cover {
+    margin-bottom: 40px;
   }
 
   .footer {
